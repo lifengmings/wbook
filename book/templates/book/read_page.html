@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-8 col-xs-offset-2">
+
+                <h3>{{ chapter.name }}</h3>
+                <br>
+                <br>
+                <div class="novel-content">
+                    <p>{{ chapter.contents|linebreaksbr }}</p>
+                </div>
+
+                <div class="previous_and_next">
+                    <ul class="pager">
+                        <li class="previous">
+                            {% if previous %}
+                                <a href="{% url 'chapter' previous.pk %}">
+                                   上一章
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="catalog">
+                            <a href="{% url 'book_info' chapter.book_from.pk %}">目录</a>
+                        </li>
+
+                        <li class="next">
+                            {% if next %}
+                                <a href="{% url 'chapter' next.pk %}">
+                                    下一章
+                                </a>
+
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,6 @@
+Django==2.0.6
+django-js-asset==1.1.0
+Pillow==5.0.0
+pytz==2017.3
+redis==2.10.6
+six==1.11.0

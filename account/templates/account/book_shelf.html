@@ -1,0 +1,37 @@
+{% extends 'profile.html' %}
+{% load static %}
+
+
+{% block title %}
+    个人中心
+{% endblock %}
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-3 col-sm-offset-3 col-md-offset-3">
+                <div class="list-group">
+                    {% if book_list %}
+                        {% for book in book_list %}
+                            <div class="list-group-item">
+                                <a href="{% url 'book_info' book.pk %}">
+                                    {{ book.collection_books }}
+                                </a>
+                                <span class="badge">
+                                    <a href="{% url 'chapter' book.collection_books.chapter_set.last.pk %}" style="color: #ffff;">
+                                        {{ book.collection_books.chapter_set.last }}
+                                        &nbsp;&nbsp;{{ book.collection_books.chapter_set.last.created|date:"Y-m-d H:i" }}
+                                    </a>
+                                </span>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        空空如也
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

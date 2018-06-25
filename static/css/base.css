@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav a.navbar-brand {
+    display: inline-block;
+}
+ul {
+    list-style-type: none!important;
+}
+
+div.swiper-slide li {
+    text-align: center;
+}
+div.swiper-container{
+    width: 790px;
+    height: 340px;
+}

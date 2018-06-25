@@ -1,0 +1,30 @@
+div.book-information {
+    position: relative;
+}
+
+div.book-information div.book-img .img{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+div.book-information .book-info {
+    float: right;
+    margin-top: -25%;
+    margin-left: 20%;
+    width: 73.1%;
+}
+div.book-information .book-info span {
+    padding-bottom: 2em;
+    font-size: 75%;
+}
+div.book-information .book-info .button-group .read-first {
+    float: left;
+}
+div.book-information .book-info .button-group .read-first {
+    float: right;
+
+}
+div.book-summary {
+    margin-top: 2em;
+}
+

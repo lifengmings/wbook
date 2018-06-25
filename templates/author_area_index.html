@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head_extends %}
+    <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block siderbar %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-0 .col-sm-2 col-md-2 col-md-2">
+                <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="{% url 'author:index' %}">
+                            作者专区
+                        </a>
+                    </li>
+
+                     <li>
+                         <a href="" class="nav-header" data-toggle="collapse" onclick="downmenu()">作品</a>
+                         <ul id="menu-menu" class="nav nav-list collapse">
+                             <li><a href="{% url 'author:my_book_list' %}">&nbsp;查看全部作品</a></li>
+                             <li><a href="{% url 'author:book_create' %}">&nbsp;创建新作品</a></li>
+                             <li><a href="{% url 'author:my_book_list' %}">&nbsp;添加新卷</a></li>
+                             <li><a href="{% url 'author:my_book_list' %}">&nbsp;更新作品</a></li>
+                         </ul>
+                     </li>
+                    <li>
+                        <a href="#">通知</a>
+                    </li>
+                    <li>
+                        <a href="#">稿费</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+
+                </div>
+            </div>
+
+
+        </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#wrapper").toggleClass("toggled");
+        function downmenu() {
+            $('.collapse').collapse()
+        }
+
+    </script>
+{% endblock %}
+
+
+

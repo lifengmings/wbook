@@ -1,0 +1,17 @@
+{% extends 'author_area_index.html' %}
+
+{% block title %}
+    添加新卷
+{% endblock %}
+
+{% block content %}
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+        <div class="book-create-or-update">
+            <form action="." method="post">
+                {% csrf_token %}
+                {{ add_new_volume_form.as_p }}
+                <button type="submit" class="btn btn-primary pull-right">提交</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

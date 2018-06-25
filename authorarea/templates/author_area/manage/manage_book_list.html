@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head_extends %}
+    <link rel="stylesheet" href="{% static 'css/book-list.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-5 col-md-5 col-lg-5 col-lg-offset-3 col-md-offset-3 col-xs-offset-3">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        作品列表
+                    </div>
+
+                    <div class="panel-body">
+                        {% for book in book_list %}
+                            <div class="book-a">
+                                <a href="{% url 'book_info' book.pk %}">{{ book }}</a>
+                                <p class="book-manage">
+                                    <a href="{% url 'author:add_new_volume' book.pk %}">添加新卷</a>
+                                    <a href="{% url 'author:update_book' book.pk %}">更新作品</a>
+                                </p>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
